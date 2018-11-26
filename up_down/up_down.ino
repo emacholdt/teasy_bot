@@ -5,7 +5,7 @@
 
 // INPUT
 int dips = 4;
-float infuseMinutes=0.05;
+float infuseMinutes=5.5;
 
 
 // vars
