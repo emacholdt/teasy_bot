@@ -46,7 +46,7 @@
 
 
 // Initialisiere die Bibliothek mit den Nummern der Schnittstellenpins
-LiquidCrystal lcd(7, 8, 9, 10, 11, 12);
+LiquidCrystal lcd(4, 5, 6, 7, 8, 9);
 
 String s = "Dieser Text ist etwas länger und wird als Lauftext angezeigt";
 // Spalten und Zeilen des lcd
@@ -60,7 +60,7 @@ void setup() {
 lcd.begin(lcdsize[0], lcdsize[1]);
 // Drucket eine Nachricht an das LCD.
 
-lcd.print("Teasy Bot v0.01" );
+lcd.print("Te" );
 }
 
 void loop() {
