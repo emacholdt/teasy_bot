@@ -1,6 +1,6 @@
 /*
   teasy bot
-  interface prototype
+  prototype v0.03
 
   Enrico Macholdt
   https://github.com/emacholdt/teasy_bot
@@ -53,7 +53,7 @@ int dipIncrement = 1;
 int mode = 0;
 
 // LCD pins
-LiquidCrystal lcd(4, 5, 6, 7, 8, 9);
+LiquidCrystal lcd(3, 4, 5, 6, 7, 8);
 // LCD size
 int lcdsize[] = {16, 2};
 
@@ -61,7 +61,7 @@ int lcdsize[] = {16, 2};
 int buttonIncrement = 12; //pin for plus button
 int buttonDecrement = 11; //pin for minus button
 int buttonNext = 10; // pin for proceed button
-int buttonBack = 3; // pin for proceed button
+int buttonBack =9; // pin for proceed button
 
 //servo pin
 int servoPin =13;
