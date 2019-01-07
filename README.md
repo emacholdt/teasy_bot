@@ -23,7 +23,7 @@ v0.02 with display and interface for infusion time and number of initial dips
 
 ## code
 
-currently found in prototype_v0.02
+teasy_bot.ino
 
 ### includes
 - the start screen
@@ -40,8 +40,9 @@ currently found in prototype_v0.02
 - saving of last settings
 - option for occational moving of the tea bag
 
-? settings menu option
-? adjustment for cup height
+potentially
+- settings menu option
+- adjustment for cup height
 
 
 
