@@ -10,7 +10,7 @@ v0.02 with display and interface for infusion time and number of initial dips
 ## parts and materials
 
 - Genuino / Elegoo Nano v3
-- 3V Servo Motor
+- 3V Servo Motor 9g
 - 4 random red push buttons
 - 1 button for reset trigger
 - 2 LCD1602 Module (16x2)
@@ -43,6 +43,7 @@ teasy_bot.ino
 potentially
 - settings menu option
 - adjustment for cup height
+- bilingual German and English with switch or button press
 
 
 
