@@ -40,7 +40,7 @@ teasy_bot.ino
 - saving of last settings
 - option for occational moving of the tea bag
 
-potentially
+## potentially
 - settings menu option
 - adjustment for cup height
 - bilingual German and English with switch or button press
