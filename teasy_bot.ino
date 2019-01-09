@@ -1,6 +1,6 @@
 /*
   teasy bot
-  prototype v0.03
+  v0.03
 
   Enrico Macholdt
   https://github.com/emacholdt/teasy_bot
@@ -13,7 +13,7 @@
 #include <Servo.h>
 
 
-
+String vers="0.03"; 
 
 
 // INPUT
@@ -82,7 +82,7 @@ void setup() {
   Serial.begin(9600);
   lastPressed=false;
   lcd.begin(lcdsize[0], lcdsize[1]);
-  lcd.print("T-easy Bot v0.02" );
+  lcd.print("T-easy Bot v" + vers );
   lcd.setCursor(0, 1);
   delay(1000);
   lcd.print("Welcome");
