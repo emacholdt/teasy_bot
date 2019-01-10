@@ -68,7 +68,7 @@ __known issues__
 - 3V Servo Motor 9g
 - 4 random red push buttons
 - 1 button for reset trigger
-- 2 LCD1602 Module (16x2)
+- LCD1602 Module (16x2)
 - 1 Potentiometer 
 - some universal PCB
 - black crafting plastic board
