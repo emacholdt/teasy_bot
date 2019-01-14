@@ -103,6 +103,10 @@ teasy_bot.ino
 - adjustment for cup height
 
 
+## wiring (fritzing)
+
+![teasy bot wiring](/img/wiring_teasy_bot.png)
+
 
 ## video archive
 
