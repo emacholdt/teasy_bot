@@ -1,6 +1,6 @@
 /*
   teasy bot
-  v0.04
+  v0.05
 
   Enrico Macholdt
   https://github.com/emacholdt/teasy_bot
@@ -11,6 +11,8 @@
 #include <LiquidCrystal.h>
 #include <Time.h>
 #include <Servo.h>
+#include "teas.h"
+#include "Strings.h"
 
 //////// version //////// Version
 String vers="0.04"; 
@@ -22,57 +24,6 @@ int LANG = 1;
 
 
 
-String welcomeString[] =   {"welcome", "Willkommen"};
-String greenTeaString[] =   {"Green tea", "Gr\365ntee"};
-String blackTeaString[] =   {"Black tea", "Schwarztee"};
-String herbalTeaString[] =   {"Herbal tea", "Kr\341utertee"};
-String fruitTeaString[] =   {"Fruit tea", "Fr\365chtetee"};
-String whiteTeaString[] =   {"White tea", "Wei\342er Tee"};
-String batteryStatusString[] =   {"battery status:", "Akkustand:"};
-String batteryEmptyString[] =   {"empty", "leer"};
-String batteryMediumString[] =   {"medium", "mittel"};
-String batteryFullString[] =   {"full", "voll"};
-String chooseTeaString[] =   {"choose tea", "Teeauswahl"};
-String chooseTimeString[] =   {"choose time", "Zeitauswahl"};
-String minutesString[] =   {"minutes", "Minuten"};
-String infuseTimeString[] =   {"infuse time", "Ziehzeit"};
-String numberOfDipsString[] =   {"number of dips", "Tauchenvorg\341nge"};
-String noneString[] =   {"none", "keine"};
-String startingString[] =   {"Starting", "Starten"};
-String timeRemainingString[] =   {"time remaining", "Restzeit"};
-String succesMessage1String[] =   {"the tea is ready", "Tee ist fertig!"};
-String succesMessage2String[] =   {"     enjoy!", "Guten Appetit"};
-
-
-/* 
-String String[] =   {"", ""};
-String String[] =   {"", ""};
-String String[] =   {"", ""};
-String String[] =   {"", ""};
-String String[] =   {"", ""};
-
-Umlaute:
-
- \341  ä
- \342  ß
- \357  ö
- \365  ü
-
-*/
-
-
-//////// create tea dictionary //////// Teelexikon erstellen
-//String teas[] =   {greenTeaString[LANG], blackTeaString[LANG], herbalTeaString[LANG], fruitTeaString[LANG], whiteTeaString[LANG] }; // tea names // Teenamen
-String teas[][3] =   
-{
-  {"Green tea", "Gr\365ntee", "2"},
-  {"Black tea", "Schwarztee", "4"},
-  {"Herbal tea", "Kr\341utertee", "6"},
-  {"Fruit tea", "Fr\365chtetee", "8"},
-  {"White tea", "Wei\342er Tee", "2"}
-};
-
-//long teaTimes[] = {   2,  4,  6,  8,  2}; // infuse times in minutes // Ziehzeiten in Minuten
 
 int teaSize = sizeof(teas) / sizeof(teas[0]);
 
