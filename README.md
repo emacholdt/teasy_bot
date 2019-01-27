@@ -3,6 +3,24 @@ Teasy Bot is a project to build an Arduino based device that preps tea, based on
 
 ## change log
 
+### v.0.6
+
+__what's new__
+- EEPROM saves last settings and selections:
+    - last selected predifined tea
+    - last menu choice
+    - last language setting
+    - last selected infuse time
+
+
+### v.0.5
+
+__what's new__
+- predifined teas in external file ````teas.h````
+- bilingual String Arrays in external file ````Strings.h````
+- buggy time printing is fixed
+
+
 ### v.0.4
 
 __what's new__
@@ -86,17 +104,15 @@ teasy_bot.ino
 - switch case for the current mode / state
 - menu for adjusting and setting
     + time
-    + number of initial dips
 - menu for choosing tea presets
 - prints remaining time
 - methods for each step and menu print
 - finishing message
 - bilingual German and English changed with 3-button hold (+, -, BACK) during battery status
-
+- saving of last selected settings in EEPORM
 
 ### missing
 - implementing of millis()
-- saving of last settings
 - option for occational moving of the tea bag
 
 ### potentially
