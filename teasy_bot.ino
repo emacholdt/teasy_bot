@@ -1,6 +1,6 @@
 /*
   teasy bot
-  v0.05
+  v0.06
 
   Enrico Macholdt
   https://github.com/emacholdt/teasy_bot
@@ -11,19 +11,30 @@
 #include <LiquidCrystal.h>
 #include <Time.h>
 #include <Servo.h>
+#include <EEPROM.h>
 #include "teas.h"
 #include "Strings.h"
 
 //////// version //////// Version
-String vers="0.04"; 
+String vers="0.06"; 
 
 
 //////// Language //////// Sprache
 //////// 0 ENG //////// 1 GER
 int LANG = 1; 
 
+//////// object class for eeprom save //////// Objekt Klasse um EEPROM daten zu speichern
+struct EEPROMdata {
+  int LANGLast = 1;
+  int inputChoiceLast = 1; // initial menu position // Anfangsposition im Menü
+  int selectedTeaLast = 0; // initial tea selection // Anfangsauswahl im Menü
+  float infuseMinutesLast = 3;
+};
 
 
+//////// create empty data object for saves //////// leeres Objekt für Speicher
+EEPROMdata eeData;
+int eeAddress=0;
 
 int teaSize = sizeof(teas) / sizeof(teas[0]);
 
@@ -119,7 +130,14 @@ void setup() {
   myservo.attach(servoPin); 
   myservo.write(cpos); // move servo to start pos // Bewege den Servo zur Startposition
   
-  
+  // load saved date
+  EEPROM.get(eeAddress, eeData);
+  LANG = eeData.LANGLast;
+  infuseMinutes = eeData.infuseMinutesLast;
+  inputChoice = eeData.inputChoiceLast;
+  selectedTea = eeData.selectedTeaLast;
+
+ 
   Serial.begin(9600);
   lastPressed=false; // nothing pressed in the last loop // bisher kein Taster gedrückt
 
@@ -202,6 +220,9 @@ void indicateBattery(){
   if (digitalRead(buttonIncrement) == LOW and  digitalRead(buttonDecrement) == LOW and  digitalRead(buttonBack) == LOW)
   {
     if(LANG==0){LANG=1;}else{LANG=0;}  
+    eeData.LANGLast=LANG;
+    EEPROM.put(eeAddress, eeData);
+    
     lcd.clear();
     return;
   }
@@ -233,6 +254,10 @@ void chooseInput(){
       {
         lastPressed = true;
         inputChoice *= -1;
+        
+        eeData.inputChoiceLast = inputChoice;
+        EEPROM.put(eeAddress, eeData);
+        
         lcd.clear();
       } else{
          lastCount+=1;
@@ -283,7 +308,8 @@ void chooseTea(){
                 selectedTea = teaSize-1;
               }
           }
-
+        eeData.selectedTeaLast = selectedTea;
+        EEPROM.put(eeAddress, eeData);
       } else{
          lastCount+=1;
          lastPressed=true;
@@ -404,7 +430,8 @@ void setTime()
            lastCount=0;
           }
         }
-      
+     eeData.infuseMinutesLast=infuseMinutes;
+     EEPROM.put(eeAddress, eeData);
     } 
     else // nothing pressed
       {
