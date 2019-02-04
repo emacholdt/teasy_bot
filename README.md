@@ -11,7 +11,8 @@ __what's new__
     - last menu choice
     - last language setting
     - last selected infuse time
-
+__known issues__
+- remaining time print out still buggy
 
 ### v.0.5
 
