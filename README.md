@@ -1,5 +1,8 @@
-# teasy_bot
-Teasy Bot is a project to build an Arduino based device that preps tea, based on time (and later temp) specific for each kind of tea.
+# teasy bot
+Teasy bot (short for "tea easy" robot) is a project to build an Arduino based device that preps tea, based on time (and maybe later temp) specific for each kind of tea.
+
+v0.06 with enclosure, bilingual interface, menu for infusion time or predefined teas
+[![latest version](https://img.youtube.com/vi/lFy_RQyiyvs/maxresdefault.jpg)](https://youtu.be/lFy_RQyiyvs)
 
 ## change log
 
@@ -13,7 +16,7 @@ __what's new__
     - last selected infuse time
     
 __known issues__
-- remaining time print out still buggy
+- remaining time print out still buggy (see issue tab)
 
 ### v.0.5
 
