@@ -210,9 +210,9 @@ void indicateBattery(){
   
   if(batteryVoltage < 3.2){ lcd.print(batteryEmptyString[LANG]  + " " + (String) batteryVoltage + " V");}
   else {
-    if (batteryVoltage > 3.7) { lcd.print(batteryMediumString[LANG]  + " " +(String) batteryVoltage + " V");}
+    if (batteryVoltage > 3.7) { lcd.print(batteryFullString[LANG]  + " " +(String) batteryVoltage + " V");}
     else {
-      lcd.print(batteryFullString[LANG]  + " " +(String) batteryVoltage + " V");
+      lcd.print(batteryMediumString[LANG]  + " " +(String) batteryVoltage + " V");
     }
   }
   
